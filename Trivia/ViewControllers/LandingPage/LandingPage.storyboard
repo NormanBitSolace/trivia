@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bJd-c7-ZSC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing Page View Controller-->
+        <scene sceneID="uo8-yW-wVV">
+            <objects>
+                <viewController id="bJd-c7-ZSC" customClass="LandingPageViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cbc-5v-zZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="STJ-Hu-fFG">
+                                <rect key="frame" x="160.5" y="313.5" width="54" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkS-1f-klR">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
+                                        <state key="normal" title="Options"/>
+                                        <connections>
+                                            <action selector="handleOptionsTouch:" destination="bJd-c7-ZSC" eventType="touchUpInside" id="LT2-qg-DZM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hr-7o-WCR">
+                                        <rect key="frame" x="12" y="30" width="30" height="30"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="handlePlayTouch:" destination="bJd-c7-ZSC" eventType="touchUpInside" id="Dh3-JV-YRe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="dDf-up-FVD">
+                                <rect key="frame" x="74" y="198.5" width="227" height="85"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="STJ-Hu-fFG" firstAttribute="top" secondItem="dDf-up-FVD" secondAttribute="bottom" constant="30" id="5PW-fr-07x"/>
+                            <constraint firstItem="STJ-Hu-fFG" firstAttribute="centerX" secondItem="wwu-tL-BSe" secondAttribute="centerX" id="DgU-fk-vsF"/>
+                            <constraint firstItem="dDf-up-FVD" firstAttribute="centerX" secondItem="STJ-Hu-fFG" secondAttribute="centerX" id="L4C-Sj-G5r"/>
+                            <constraint firstItem="STJ-Hu-fFG" firstAttribute="centerY" secondItem="wwu-tL-BSe" secondAttribute="centerY" id="m3T-29-By1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wwu-tL-BSe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5u9-kt-AqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banner" width="227" height="85"/>
+    </resources>
+</document>

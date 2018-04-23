@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YgH-op-vi9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="XyN-nD-vZN">
+            <objects>
+                <viewController id="YgH-op-vi9" customClass="GameViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YgR-dq-9VD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which company did Gabe Newell work at before founding Valve Corporation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vy-sK-b5y">
+                                <rect key="frame" x="32" y="84" width="311" height="166"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="NDv-2p-zXh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1mE-eO-p05">
+                                <rect key="frame" x="164" y="340" width="46" height="144"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjO-P4-E7f">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-ww-ZPs">
+                                        <rect key="frame" x="0.0" y="38" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-sf-b3H">
+                                        <rect key="frame" x="0.0" y="76" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7a1-PD-Tlh">
+                                        <rect key="frame" x="0.0" y="114" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1mE-eO-p05" firstAttribute="centerX" secondItem="4vy-sK-b5y" secondAttribute="centerX" id="398-pB-axv"/>
+                            <constraint firstItem="4vy-sK-b5y" firstAttribute="top" secondItem="hve-AF-ppZ" secondAttribute="top" constant="64" id="3vM-Wv-Cun"/>
+                            <constraint firstItem="4vy-sK-b5y" firstAttribute="leading" secondItem="hve-AF-ppZ" secondAttribute="leading" constant="32" id="P6m-Ec-1pi"/>
+                            <constraint firstItem="1mE-eO-p05" firstAttribute="top" secondItem="4vy-sK-b5y" secondAttribute="bottom" constant="90" id="TkK-cS-X51"/>
+                            <constraint firstItem="hve-AF-ppZ" firstAttribute="trailing" secondItem="4vy-sK-b5y" secondAttribute="trailing" constant="32" id="WNl-wL-NSv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hve-AF-ppZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="hjO-P4-E7f" id="bCH-cm-HZw"/>
+                        <outlet property="button2" destination="I5e-ww-ZPs" id="XjX-eY-R3f"/>
+                        <outlet property="button3" destination="PhI-sf-b3H" id="iDk-Mo-Di0"/>
+                        <outlet property="button4" destination="7a1-PD-Tlh" id="pyI-uC-SWD"/>
+                        <outlet property="questionLabel" destination="4vy-sK-b5y" id="k9R-UJ-hJR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4os-GD-Mbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183.19999999999999" y="172.26386806596702"/>
+        </scene>
+    </scenes>
+</document>

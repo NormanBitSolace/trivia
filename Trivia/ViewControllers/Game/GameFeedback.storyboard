@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OI3-aK-c0H">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Feedback View Controller-->
+        <scene sceneID="14a-CY-G7s">
+            <objects>
+                <viewController id="OI3-aK-c0H" customClass="GameFeedbackViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="byf-PA-Kz3">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNU-nN-njI">
+                                <rect key="frame" x="0.0" y="60" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-wY-yjy">
+                                <rect key="frame" x="0.0" y="104" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv9-Nz-dAK">
+                                <rect key="frame" x="119" y="206" width="62" height="30"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="handleContinueTouch:" destination="OI3-aK-c0H" eventType="touchUpInside" id="xnB-Zf-lJO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gfe-wY-yjy" firstAttribute="leading" secondItem="Fbd-Xn-JT3" secondAttribute="leading" id="0Xh-JU-efN"/>
+                            <constraint firstItem="Fbd-Xn-JT3" firstAttribute="trailing" secondItem="DNU-nN-njI" secondAttribute="trailing" id="Hqt-QD-BQX"/>
+                            <constraint firstItem="DNU-nN-njI" firstAttribute="leading" secondItem="Fbd-Xn-JT3" secondAttribute="leading" id="XmJ-Zp-Zdv"/>
+                            <constraint firstItem="DNU-nN-njI" firstAttribute="top" secondItem="Fbd-Xn-JT3" secondAttribute="top" constant="60" id="cOm-BG-kUN"/>
+                            <constraint firstItem="Fbd-Xn-JT3" firstAttribute="bottom" secondItem="Pv9-Nz-dAK" secondAttribute="bottom" constant="64" id="mte-5u-sln"/>
+                            <constraint firstItem="gfe-wY-yjy" firstAttribute="top" secondItem="DNU-nN-njI" secondAttribute="bottom" constant="23" id="pJc-8d-pfH"/>
+                            <constraint firstItem="Fbd-Xn-JT3" firstAttribute="trailing" secondItem="gfe-wY-yjy" secondAttribute="trailing" id="ukf-vM-CAV"/>
+                            <constraint firstItem="Pv9-Nz-dAK" firstAttribute="centerX" secondItem="Fbd-Xn-JT3" secondAttribute="centerX" id="w6z-b4-3Ze"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fbd-Xn-JT3"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="gfe-wY-yjy" id="IvH-gq-vMd"/>
+                        <outlet property="titleLabel" destination="DNU-nN-njI" id="Jl5-zV-e2k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJb-Uq-bCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6" y="150"/>
+        </scene>
+    </scenes>
+</document>
