@@ -34,7 +34,7 @@ This project applies the ideas above with a simple trivia game example.
 
 
 ### Navigator.swift
-This class provides base functionality for navigating between view controllers. These API provide a configuration block so fully formed view controllers can be modified externally after `viewDidLoad` has been called. Since the caller is outside of the view hierarchy, the block's context may include logic and data which can be simplified to immutable view model. Using a storyboards just adds a parameter to the API.  Specific normalized API for popovers, child, and modal view controllers can encapsulate the details to display each e.g. showing a popup menu:
+This class provides base functionality for navigating between view controllers. These API provide a configuration block so fully formed view controllers can be modified externally after `viewDidLoad` has been called. Since the caller is outside of the view hierarchy, the block's context may include logic and data which can be simplified to immutable view model. Using a storyboards just adds a parameter to the API.  Includes normalized push, popover, child, and modal view controller API that encapsulate the details of each. For example, a popover view controller to show a popup menu could be implemented:
 ```swift
 let _: MenuPopoverViewController = presentPopover(anchor: anchor) { vc in
     vc.data = ["Mixed", "Easy", "Medium", "Hard"]
@@ -72,10 +72,13 @@ class AppCoordinator {
     ...
 }
 ```
+
+### Screenshots
+
 ![Landing Page](https://user-images.githubusercontent.com/2135673/39156835-d0be650a-470c-11e8-8535-476e6785f78f.jpeg)
 ![Game Page](https://user-images.githubusercontent.com/2135673/39156834-d0a38d48-470c-11e8-84d4-59983933bb8f.jpeg)
 
-### Links
+### Trivia Data Links
 
 * [Trivia JSON](https://opentdb.com/api.php?amount=100)
 * [Trivia URL generator](https://opentdb.com/api_config.php)
