@@ -27,14 +27,15 @@ Moving this logic out of the view controller and in to a non UIKit based class h
 
 
 ```
-My personal hope is that these independent and resuable view controllers would cause the development community would catch fire sharing view controllers.
+My personal hope is that these independent and resuable view controllers would lead the development community to
+share view controllers. It remains to be seen there are view controllers general enough to be shared.
 ```
 
 This project applies the ideas above with a simple trivia game example.
 
 
 ### Navigator.swift
-This class provides base functionality for navigating between view controllers. These API provide a configuration block so fully formed view controllers can be modified externally after `viewDidLoad` has been called. Since the caller is outside of the view hierarchy, the block's context may include logic and data which can be simplified to immutable view model. Using a storyboards just adds a parameter to the API.  Includes normalized push, popover, child, and modal view controller API that encapsulate the details of each. For example, a popover view controller to show a popup menu could be implemented:
+This class provides base functionality for navigating between view controllers. These API provide a configuration block so fully formed view controllers can be modified externally after `viewDidLoad` has been called. Since the caller is outside of the view hierarchy, the block's context may include logic and model concerns. Additionally, the controller could take the responsibility of brokering view model to UIViewController and UIView descendants. Using a storyboards just adds a parameter to the API.  Includes normalized push, popover, child, and modal view controller API that encapsulate the details of each. For example, a popover view controller to show a popup menu could be implemented:
 ```swift
 let _: MenuPopoverViewController = presentPopover(anchor: anchor) { vc in
     vc.data = ["Mixed", "Easy", "Medium", "Hard"]
@@ -53,7 +54,7 @@ This class is specific to the app and leverages off of the `Navigator`’s base 
 
 
 ### AppCoordinator.swift
-This class controls the navigation flow, has references to app concerns e.g. data and logic.
+This class controls the navigation flow, has injected references to app concerns e.g. model and logic.
 ```swift
 class AppCoordinator {
 
@@ -61,8 +62,8 @@ class AppCoordinator {
     let appNavigator: AppNavigator
 
     func play() {
-        dataSource.fetchTriviaModel { model in
-            if let model = model {
+        dataSource.fetchTriviaModel { data in
+            if let model = data {
                 self.appNavigator.showGameScreen(model)
             } else {
                 self.appNavigator.showNoDataScreen()
