@@ -1,6 +1,6 @@
 # Trivia
 
-Trivia is a redimentary app that I’m using to explore the notion that Xcode should auto generate an AppNavigator.swift file alongside AppDelegate.swift when creating a new "Single View App" project.
+Trivia is a rudimentary app that I’m using to explore the notion that Xcode should auto generate an AppNavigator.swift file alongside AppDelegate.swift when creating a new "Single View App" project.
    
 ## Reasoning
 Xcode currently uses a project’s target Main Interface setting to create a navigation or view controller. The reference to this controller is held by the `AppDelegate`’s `UIWindow` property. Suppose creating a new "Single View App" Xcode project auto generated an `AppNavigator.swift` file alongside `AppDelegate.swift`. `AppNavigator.swift` would contain a reference to the root navigation (or view) controller.
