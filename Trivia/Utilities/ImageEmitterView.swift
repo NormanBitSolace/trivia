@@ -31,7 +31,7 @@ extension UIView {
                 target.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
                 ])
         } else {
-            for attr: NSLayoutAttribute in [.top, .leading, .bottom, .trailing] {
+            for attr: NSLayoutConstraint.Attribute in [.top, .leading, .bottom, .trailing] {
                 target.addConstraint(NSLayoutConstraint(item: target, attribute: attr, relatedBy: .equal, toItem: self, attribute: attr, multiplier: 1.0, constant: 0.0))
             }
         }
@@ -61,7 +61,7 @@ public class ImageEmitterView: UIView {
         emitter = CAEmitterLayer()
 
         emitter.emitterPosition = CGPoint(x: frame.size.width / 2.0, y: 0)
-        emitter.emitterShape = kCAEmitterLayerLine
+        emitter.emitterShape = CAEmitterLayerEmitterShape.line
         emitter.emitterSize = CGSize(width: frame.size.width, height: 1)
 
         var cells = [CAEmitterCell]()

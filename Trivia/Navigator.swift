@@ -114,10 +114,10 @@ extension Navigator {   //  CHILD
     }
 
     private func addChildViewController<T: UIViewController>(vc: T, container: UIViewController, animated: Bool = true, configure: Configure<T>) -> T {
-        container.addChildViewController(vc)
+        container.addChild(vc)
         rootNavigationController.applyConfig(vc, configure: configure)
         container.view.addSubview(vc.view)
-        vc.didMove(toParentViewController: container)
+        vc.didMove(toParent: container)
         return vc
     }
 }

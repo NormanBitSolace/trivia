@@ -45,7 +45,7 @@ class MenuPopoverViewController: GenericPopoverTableViewController {
     var data: [String]!
     var menuChoice: ((String) -> Void)!
 
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: .plain)
     }
 
