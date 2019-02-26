@@ -1,9 +1,17 @@
-# Trivia
+# Exploration of a segue alternative
 
-Trivia is a rudimentary app that I’m using to explore the notion that Xcode should auto generate an AppNavigator.swift file alongside AppDelegate.swift when creating a new "Single View App" project.
+Trivia is a rudimentary app to explore an alternative to using segues in view controllers (VC). While wiring segues using Interface Builder (IB) is fine for small projects the approach has several key drawbacks:
+
+* VC have to have knowledge of the next VC to complete the segue wiring.
+* VC have access model concerns outside of their requirements in order to pass data to other VC in segue logic.
+* VC aren’t re-usable and typically the storyboard concerns get combined.
+* VC get large because of all of these concerns.
+* Navigation logic is contained in VC.
+
+This project removes these concerns from the VC into `AppCoordinator.swift` and `AppNavigator.swift`. `AppCoordinator` owns the `AppNavigator`, model/data source, and navigation logic. `AppNavigator` is responsible for pushing, popping, presenting modal and popups, and child VC without knowledge of how they’re connected. This allows for code and storyboard re-use. By allowing VC to configure themselves with a closure that logic is independent of the VC lifecycle and thus testable.
    
 ## Reasoning
-Xcode currently uses a project’s target Main Interface setting to create a navigation or view controller. The reference to this controller is held by the `AppDelegate`’s `UIWindow` property. Suppose creating a new "Single View App" Xcode project auto generated an `AppNavigator.swift` file alongside `AppDelegate.swift`. `AppNavigator.swift` would contain a reference to the root navigation (or view) controller.
+Xcode currently uses a project’s target Main Interface setting and the `@UIApplicationMain` annotation to create and connect a navigation or view controller. The reference to this controller is held by the `AppDelegate`’s `UIWindow` property. Instead we give `AppNavigator.swift` a reference to the root navigation (or view) controller:
 
 ```swift
 class Navigator {
@@ -24,12 +32,6 @@ Moving this logic out of the view controller and in to a non UIKit based class h
 * View controllers don’t have business logic concerns
 * The logic becomes testable
 * View controllers shrink
-
-
-```
-My personal hope is that these independent and resuable view controllers would lead the development community to
-share view controllers. It remains to be seen there are view controllers general enough to be shared.
-```
 
 This project applies the ideas above with a simple trivia game example.
 
